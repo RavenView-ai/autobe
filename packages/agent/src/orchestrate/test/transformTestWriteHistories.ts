@@ -1,14 +1,13 @@
 import { IAgenticaHistoryJson } from "@agentica/core";
-import { AutoBeTestScenarioEvent } from "@autobe/interface";
+import { AutoBeTestScenario } from "@autobe/interface";
 import { v4 } from "uuid";
 
 import { AutoBeSystemPromptConstant } from "../../constants/AutoBeSystemPromptConstant";
+import { IAutoBeTestScenarioArtifacts } from "./structures/IAutoBeTestScenarioArtifacts";
 
-export const transformTestProgressHistories = (props: {
-  scenario: AutoBeTestScenarioEvent.IScenario;
-  dto: Record<string, string>;
-  sdk: Record<string, string>;
-  e2e: Record<string, string>;
+export const transformTestWriteHistories = (props: {
+  scenario: AutoBeTestScenario;
+  artifacts: IAutoBeTestScenarioArtifacts;
 }): Array<
   IAgenticaHistoryJson.IAssistantMessage | IAgenticaHistoryJson.ISystemMessage
 > => {
@@ -17,7 +16,7 @@ export const transformTestProgressHistories = (props: {
       id: v4(),
       created_at: new Date().toISOString(),
       type: "systemMessage",
-      text: AutoBeSystemPromptConstant.TEST_PROGRESS,
+      text: AutoBeSystemPromptConstant.TEST_WRITE,
     },
     {
       id: v4(),
@@ -35,17 +34,17 @@ export const transformTestProgressHistories = (props: {
         "",
         "## DTO Definitions",
         "```json",
-        JSON.stringify(props.dto),
+        JSON.stringify(props.artifacts.dto),
         "```",
         "",
         "## API (SDK) Functions",
         "```json",
-        JSON.stringify(props.sdk),
+        JSON.stringify(props.artifacts.sdk),
         "```",
         "",
         "## E2E Mockup Functions",
         "```json",
-        JSON.stringify(props.e2e),
+        JSON.stringify(props.artifacts.e2e),
         "```",
         "",
       ].join("\n"),

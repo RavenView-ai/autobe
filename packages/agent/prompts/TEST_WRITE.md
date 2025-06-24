@@ -377,6 +377,50 @@ The Agent must understand the **interrelationships** among these 4 input materia
 - Ensure runtime type safety for all important objects and responses
 - Configure tests to terminate immediately upon type validation failure for clear error cause identification
 
+### 3.6. Import Statement Guidelines
+All E2E test functions must follow these standardized import patterns for consistency and maintainability:
+
+- **typia Library**: 
+  ```typescript
+  import typia from "typia";
+  ```
+
+- **API SDK Functions**: 
+  ```typescript
+  import api from "@ORGANIZATION/PROJECT-api";
+  ```
+
+- **DTO Types**: 
+  ```typescript
+  import { DtoName } from "@ORGANIZATION/PROJECT-api/lib/structures/DtoName";
+  ```
+  - Example: `import { IShoppingSeller } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingSeller";`
+  - Import each DTO type individually with explicit naming
+  - Follow the exact path structure: `@ORGANIZATION/PROJECT-api/lib/structures/`
+
+- **Test Validation Utilities**: 
+  ```typescript
+  import { TestValidator } from "@nestia/e2e";
+  ```
+
+**Import Organization Requirements:**
+- Group imports in the following order: typia, API SDK, DTO types, TestValidator
+- Maintain alphabetical ordering within each group
+- Use explicit imports rather than wildcard imports for better type safety
+- Ensure all necessary types are imported before function implementation
+- Verify import paths match exactly with the project structure
+
+**Import Example:**
+```typescript
+import { TestValidator } from "@nestia/e2e";
+import typia from "typia";
+
+import api from "@ORGANIZATION/PROJECT-api";
+import { IShoppingCustomer } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingCustomer";
+import { IShoppingSale } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingSale";
+import { IShoppingSeller } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingSeller";
+```
+
 ## 4. Detailed Implementation Guidelines
 
 ### 4.1. API and DTO Analysis Methodology
@@ -389,6 +433,8 @@ The Agent must understand the **interrelationships** among these 4 input materia
 ### 4.2. Function Structure
 ```typescript
 import { TestValidator } from "@nestia/e2e";
+import typia from "typia";
+
 import api from "@ORGANIZATION/PROJECT-api";
 import { IShoppingCartCommodity } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingCartCommodity";
 // ... import all necessary types
@@ -442,6 +488,8 @@ The following is a complete example of E2E test function that should actually be
 
 ```typescript
 import { TestValidator } from "@nestia/e2e";
+import typia from "typia";
+
 import api from "@ORGANIZATION/PROJECT-api";
 import { IShoppingCartCommodity } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingCartCommodity";
 import { IShoppingCustomer } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingCustomer";
@@ -451,7 +499,6 @@ import { IShoppingOrderPublish } from "@ORGANIZATION/PROJECT-api/lib/structures/
 import { IShoppingSale }    from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingSale";
 import { IShoppingSaleReview } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingSaleReview";
 import { IShoppingSeller }  from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingSeller";
-import typia from "typia";
 
 /**
  * Validate the modification of review posts.
@@ -713,7 +760,7 @@ export async function test_api_shopping_sale_review_update(
 
 ### 5.1. Implementation Example Commentary
 
-**1. Import Statements**: Explicitly import all necessary types and utilities, accurately referencing package paths in `@ORGANIZATION/PROJECT-api` format and type definitions under `lib/structures/`.
+**1. Import Statements**: Explicitly import all necessary types and utilities, accurately referencing package paths in `@ORGANIZATION/PROJECT-api` format and type definitions under `lib/structures/`. Follow the standardized import guidelines with proper grouping and alphabetical ordering.
 
 **2. Comment Structure**: JSDoc comments at the top of functions explain the background and necessity of entire scenarios, specifying detailed 11-step processes with numbers.
 
@@ -794,11 +841,13 @@ E2E testing must verify that systems operate correctly not only in normal busine
 - **Appropriate Test Data**: Simulate realistic error situations like non-existent emails, incorrect passwords
 - **Concise Structure**: Unlike normal flows, compose error tests with minimal steps
 - **Function Naming Convention**: `test_api_{domain}_{action}_failure` or `test_api_{domain}_{action}_{specific_error}`
+- **CRITICAL**: Never use `// @ts-expect-error` comments when testing error cases. These functions test **runtime errors**, not compilation errors. The TypeScript code should compile successfully while the API calls are expected to fail at runtime.
 
 ### 8.4. Error Test Example
 
 ```typescript
 import { TestValidator } from "@nestia/e2e";
+
 import api from "@ORGANIZATION/PROJECT-api";
 import { IShoppingCustomer } from "@ORGANIZATION/PROJECT-api/lib/structures/IShoppingCustomer";
 
@@ -837,6 +886,7 @@ export async function test_api_customer_authenticate_login_failure(
 - Do not mix with normal flow tests
 - Accurately specify expected HTTP status codes
 - Focus on status codes rather than error message content
+- **IMPORTANT**: Never add `// @ts-expect-error` comments - error validation functions handle runtime errors while maintaining TypeScript type safety
 
 ## 9. Final Checklist
 
@@ -850,13 +900,16 @@ E2E test function writing completion requires verification of the following item
 - [ ] Is the `satisfies` keyword used in request body?
 - [ ] Is `typia.assert` applied where necessary?
 - [ ] Are all necessary types imported with correct paths?
+- [ ] Do import statements follow the standardized guidelines (typia, API SDK, DTO types, TestValidator)?
+- [ ] Are error test cases written without `// @ts-expect-error` comments?
 
 ### 9.2. Quality Element Verification
 - [ ] Are variable names meaningful and consistent?
 - [ ] Are account switches performed at appropriate times?
 - [ ] Is data validation performed correctly?
 - [ ] Is code structure logical with good readability?
-- [ ] Are error scenarios handled appropriately when needed?
+- [ ] Are error scenarios handled appropriately when needed without TypeScript error suppression comments?
 - [ ] Is business logic completeness guaranteed?
+- [ ] Are imports organized properly with alphabetical ordering within groups?
 
 Please adhere to all these principles and guidelines to write complete and accurate E2E test functions. Your mission is not simply to write code, but to build a robust test system that perfectly reproduces and validates actual business scenarios.
