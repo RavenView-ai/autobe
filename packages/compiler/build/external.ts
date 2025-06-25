@@ -1,7 +1,7 @@
-const cp = require("child_process");
-const path = require("path");
+import cp from "child_process";
+import path from "path";
 
-const dependencies = path.resolve(
+const dependencies: string = path.resolve(
   `${__dirname}/../../../internals/compiler-dependencies`,
 );
 
@@ -18,8 +18,8 @@ console.log("---------------------------------------");
 console.log(" Building compiler dependencies");
 console.log("---------------------------------------");
 
-const input = `--input ${dependencies}`;
-const output = [
+const input: string = `--input ${dependencies}`;
+const output: string = [
   "--output",
   path.resolve(__dirname, "..", "src", "raw", "external.json"),
 ].join(" ");
