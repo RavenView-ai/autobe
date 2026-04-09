@@ -1,0 +1,592 @@
+{
+  "targetPath": "/Users/yongrean/Downloads/autobe-examples/deepseek/deepseek-v3.2/shopping",
+  "totalScore": 0,
+  "grade": "F",
+  "phases": {
+    "gate": {
+      "phase": "gate",
+      "passed": false,
+      "score": 0,
+      "maxScore": 100,
+      "weightedScore": 0,
+      "issues": [
+        {
+          "code": "GATE001",
+          "severity": "critical",
+          "category": "syntax",
+          "message": "No TypeScript files found in src/ — pipeline may not have generated code",
+          "id": "syntax-1775672321844-t4inyal2aig",
+          "autoFixable": false
+        }
+      ],
+      "durationMs": 0,
+      "metrics": {
+        "failedAt": "no-source",
+        "reason": "No TypeScript files found"
+      }
+    },
+    "documentQuality": {
+      "phase": "documentQuality",
+      "passed": true,
+      "score": 0,
+      "maxScore": 100,
+      "weightedScore": 0,
+      "issues": [
+        {
+          "severity": "critical",
+          "category": "documentation",
+          "code": "DOC001",
+          "message": "No documentation found (missing docs/analysis/ and README.md)",
+          "id": "documentation-1775672321845-5m5hja45t8s",
+          "autoFixable": false
+        }
+      ],
+      "durationMs": 1,
+      "metrics": {
+        "hasDocsFolder": false,
+        "hasReadme": false,
+        "docFileCount": 0,
+        "totalDocLength": 0
+      },
+      "explanation": {
+        "reasons": [
+          "1 critical issue(s) found",
+          "1x No documentation found (missing docs/analysis/ and README.md)"
+        ],
+        "issueSummaries": [
+          {
+            "code": "DOC001",
+            "count": 1,
+            "message": "No documentation found (missing docs/analysis/ and README.md)",
+            "severity": "critical"
+          }
+        ],
+        "suggestions": [
+          "Fix all critical issues first"
+        ]
+      }
+    },
+    "requirementsCoverage": {
+      "phase": "requirementsCoverage",
+      "passed": true,
+      "score": 0,
+      "maxScore": 100,
+      "weightedScore": 0,
+      "issues": [
+        {
+          "severity": "critical",
+          "category": "requirements",
+          "code": "REQ001",
+          "message": "No controllers found - API endpoints not implemented",
+          "id": "requirements-1775672321844-8jkf1pv1lzr",
+          "autoFixable": false
+        },
+        {
+          "severity": "critical",
+          "category": "requirements",
+          "code": "REQ002",
+          "message": "No providers found - business logic not implemented",
+          "id": "requirements-1775672321844-eyg1bs4y36",
+          "autoFixable": false
+        },
+        {
+          "severity": "warning",
+          "category": "requirements",
+          "code": "REQ003",
+          "message": "No structures/DTOs found",
+          "id": "requirements-1775672321844-7varkyrn2ae",
+          "autoFixable": false
+        },
+        {
+          "severity": "warning",
+          "category": "requirements",
+          "code": "REQ004",
+          "message": "No requirements documents found in docs/analysis/",
+          "id": "requirements-1775672321844-0u41vvi7pjy9",
+          "autoFixable": false
+        }
+      ],
+      "durationMs": 0,
+      "metrics": {
+        "controllerCount": 0,
+        "providerCount": 0,
+        "structureCount": 0,
+        "requirementsDocCount": 0,
+        "hasRequirementsDocs": false,
+        "mappedControllers": 0,
+        "unmappedControllers": 0,
+        "mappingRatio": 0
+      },
+      "explanation": {
+        "reasons": [
+          "2 critical issue(s) found",
+          "1x No controllers found - API endpoints not implemented",
+          "1x No providers found - business logic not implemented",
+          "1x No structures/DTOs found"
+        ],
+        "issueSummaries": [
+          {
+            "code": "REQ001",
+            "count": 1,
+            "message": "No controllers found - API endpoints not implemented",
+            "severity": "critical"
+          },
+          {
+            "code": "REQ002",
+            "count": 1,
+            "message": "No providers found - business logic not implemented",
+            "severity": "critical"
+          },
+          {
+            "code": "REQ003",
+            "count": 1,
+            "message": "No structures/DTOs found",
+            "severity": "warning"
+          },
+          {
+            "code": "REQ004",
+            "count": 1,
+            "message": "No requirements documents found in docs/analysis/",
+            "severity": "warning"
+          }
+        ],
+        "suggestions": [
+          "Fix all critical issues first"
+        ]
+      }
+    },
+    "testCoverage": {
+      "phase": "testCoverage",
+      "passed": true,
+      "score": 0,
+      "maxScore": 100,
+      "weightedScore": 0,
+      "issues": [
+        {
+          "severity": "critical",
+          "category": "test",
+          "code": "TEST001",
+          "message": "No test files found",
+          "id": "test-1775672321844-ii3rp6qi5m",
+          "autoFixable": false
+        }
+      ],
+      "durationMs": 0,
+      "metrics": {
+        "testCount": 0,
+        "controllerCount": 0,
+        "routeAnalysis": false,
+        "runtimeVerified": false
+      },
+      "explanation": {
+        "reasons": [
+          "1 critical issue(s) found",
+          "1x No test files found"
+        ],
+        "issueSummaries": [
+          {
+            "code": "TEST001",
+            "count": 1,
+            "message": "No test files found",
+            "severity": "critical"
+          }
+        ],
+        "suggestions": [
+          "Fix all critical issues first"
+        ]
+      }
+    },
+    "logicCompleteness": {
+      "phase": "logicCompleteness",
+      "passed": true,
+      "score": 100,
+      "maxScore": 100,
+      "weightedScore": 30,
+      "issues": [],
+      "durationMs": 0,
+      "metrics": {
+        "totalIncomplete": 0,
+        "criticalCount": 0,
+        "warningCount": 0,
+        "todoCount": 0,
+        "fixmeCount": 0,
+        "emptyMethods": 0,
+        "emptyCatch": 0
+      },
+      "explanation": {
+        "reasons": [],
+        "issueSummaries": [],
+        "suggestions": []
+      }
+    },
+    "apiCompleteness": {
+      "phase": "apiCompleteness",
+      "passed": true,
+      "score": 0,
+      "maxScore": 100,
+      "weightedScore": 0,
+      "issues": [
+        {
+          "severity": "critical",
+          "category": "api",
+          "code": "API002",
+          "message": "No API endpoints found",
+          "id": "api-1775672321845-1rnpjn9f43gi",
+          "autoFixable": false
+        }
+      ],
+      "durationMs": 0,
+      "metrics": {
+        "totalEndpoints": 0,
+        "emptyEndpoints": 0,
+        "stubEndpoints": 0,
+        "implementedEndpoints": 0,
+        "noProviderEndpoints": 0,
+        "passthroughEndpoints": 0,
+        "completionRate": 0,
+        "implementationRate": 0
+      },
+      "explanation": {
+        "reasons": [
+          "1 critical issue(s) found",
+          "1x No API endpoints found"
+        ],
+        "issueSummaries": [
+          {
+            "code": "API002",
+            "count": 1,
+            "message": "No API endpoints found",
+            "severity": "critical"
+          }
+        ],
+        "suggestions": [
+          "Fix all critical issues first"
+        ]
+      }
+    }
+  },
+  "reference": {
+    "complexity": {
+      "totalFunctions": 0,
+      "complexFunctions": 0,
+      "maxComplexity": 0,
+      "issues": []
+    },
+    "duplication": {
+      "totalBlocks": 0,
+      "issues": []
+    },
+    "naming": {
+      "totalIssues": 0,
+      "issues": []
+    },
+    "jsdoc": {
+      "totalMissing": 0,
+      "totalApis": 0,
+      "issues": []
+    },
+    "schemaSync": {
+      "totalTypes": 0,
+      "emptyTypes": 0,
+      "mismatchedProperties": 0,
+      "issues": []
+    }
+  },
+  "summary": {
+    "totalIssues": 8,
+    "criticalCount": 6,
+    "warningCount": 2,
+    "suggestionCount": 0
+  },
+  "criticalIssues": [
+    {
+      "code": "GATE001",
+      "severity": "critical",
+      "category": "syntax",
+      "message": "No TypeScript files found in src/ — pipeline may not have generated code",
+      "id": "syntax-1775672321844-t4inyal2aig",
+      "autoFixable": false
+    },
+    {
+      "severity": "critical",
+      "category": "documentation",
+      "code": "DOC001",
+      "message": "No documentation found (missing docs/analysis/ and README.md)",
+      "id": "documentation-1775672321845-5m5hja45t8s",
+      "autoFixable": false
+    },
+    {
+      "severity": "critical",
+      "category": "requirements",
+      "code": "REQ001",
+      "message": "No controllers found - API endpoints not implemented",
+      "id": "requirements-1775672321844-8jkf1pv1lzr",
+      "autoFixable": false
+    },
+    {
+      "severity": "critical",
+      "category": "requirements",
+      "code": "REQ002",
+      "message": "No providers found - business logic not implemented",
+      "id": "requirements-1775672321844-eyg1bs4y36",
+      "autoFixable": false
+    },
+    {
+      "severity": "critical",
+      "category": "test",
+      "code": "TEST001",
+      "message": "No test files found",
+      "id": "test-1775672321844-ii3rp6qi5m",
+      "autoFixable": false
+    },
+    {
+      "severity": "critical",
+      "category": "api",
+      "code": "API002",
+      "message": "No API endpoints found",
+      "id": "api-1775672321845-1rnpjn9f43gi",
+      "autoFixable": false
+    }
+  ],
+  "warnings": [
+    {
+      "severity": "warning",
+      "category": "requirements",
+      "code": "REQ003",
+      "message": "No structures/DTOs found",
+      "id": "requirements-1775672321844-7varkyrn2ae",
+      "autoFixable": false
+    },
+    {
+      "severity": "warning",
+      "category": "requirements",
+      "code": "REQ004",
+      "message": "No requirements documents found in docs/analysis/",
+      "id": "requirements-1775672321844-0u41vvi7pjy9",
+      "autoFixable": false
+    }
+  ],
+  "suggestions": [],
+  "meta": {
+    "evaluatedAt": "2026-04-08T18:18:41.846Z",
+    "totalDurationMs": 5,
+    "estimateVersion": "0.30.5",
+    "evaluatedFiles": 0
+  },
+  "performanceMetrics": {
+    "totalSizeKB": 0,
+    "totalFiles": 0,
+    "totalLines": 0,
+    "avgLinesPerFile": 0,
+    "largestFile": "N/A",
+    "largestFileSizeKB": 0,
+    "controllers": 0,
+    "providers": 0,
+    "structures": 0,
+    "tests": 0
+  },
+  "agentEvaluations": [
+    {
+      "agent": "SecurityAgent",
+      "provider": "openrouter",
+      "model": "anthropic/claude-sonnet-4-6",
+      "issues": [],
+      "score": -1,
+      "summary": "No files to evaluate — excluded from scoring",
+      "durationMs": 0
+    },
+    {
+      "agent": "LLMQualityAgent",
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "issues": [],
+      "score": -1,
+      "summary": "No files to evaluate — excluded from scoring",
+      "durationMs": 0
+    },
+    {
+      "agent": "HallucinationAgent",
+      "provider": "openrouter",
+      "model": "deepseek/deepseek-v3.2",
+      "issues": [],
+      "score": -1,
+      "summary": "No files to evaluate — excluded from scoring",
+      "durationMs": 0
+    }
+  ],
+  "scoreBreakdown": {
+    "phaseScore": 0,
+    "phaseWeight": 1,
+    "phaseContribution": 0,
+    "agentScore": null,
+    "agentWeight": 0,
+    "agentContribution": 0
+  },
+  "fixAdvisory": {
+    "items": [
+      {
+        "issueId": "test-1775672321844-ii3rp6qi5m",
+        "phase": "testCoverage",
+        "severity": "critical",
+        "code": "TEST001",
+        "message": "No test files found",
+        "estimatedImpact": 27.1,
+        "priority": 1,
+        "source": "phase"
+      },
+      {
+        "issueId": "documentation-1775672321845-5m5hja45t8s",
+        "phase": "documentQuality",
+        "severity": "critical",
+        "code": "DOC001",
+        "message": "No documentation found (missing docs/analysis/ and README.md)",
+        "estimatedImpact": 8.2,
+        "priority": 2,
+        "source": "phase"
+      },
+      {
+        "issueId": "api-1775672321845-1rnpjn9f43gi",
+        "phase": "apiCompleteness",
+        "severity": "critical",
+        "code": "API002",
+        "message": "No API endpoints found",
+        "estimatedImpact": 8.2,
+        "priority": 3,
+        "source": "phase"
+      },
+      {
+        "issueId": "requirements-1775672321844-8jkf1pv1lzr",
+        "phase": "requirementsCoverage",
+        "severity": "critical",
+        "code": "REQ001",
+        "message": "No controllers found - API endpoints not implemented",
+        "estimatedImpact": 5.3,
+        "priority": 4,
+        "source": "phase"
+      },
+      {
+        "issueId": "requirements-1775672321844-eyg1bs4y36",
+        "phase": "requirementsCoverage",
+        "severity": "critical",
+        "code": "REQ002",
+        "message": "No providers found - business logic not implemented",
+        "estimatedImpact": 5.3,
+        "priority": 5,
+        "source": "phase"
+      },
+      {
+        "issueId": "requirements-1775672321844-7varkyrn2ae",
+        "phase": "requirementsCoverage",
+        "severity": "warning",
+        "code": "REQ003",
+        "message": "No structures/DTOs found",
+        "estimatedImpact": 3.2,
+        "priority": 6,
+        "source": "phase"
+      },
+      {
+        "issueId": "requirements-1775672321844-0u41vvi7pjy9",
+        "phase": "requirementsCoverage",
+        "severity": "warning",
+        "code": "REQ004",
+        "message": "No requirements documents found in docs/analysis/",
+        "estimatedImpact": 3.2,
+        "priority": 7,
+        "source": "phase"
+      },
+      {
+        "issueId": "syntax-1775672321844-t4inyal2aig",
+        "phase": "gate",
+        "severity": "critical",
+        "code": "GATE001",
+        "message": "No TypeScript files found in src/ — pipeline may not have generated code",
+        "estimatedImpact": 2,
+        "priority": 8,
+        "source": "phase"
+      }
+    ],
+    "totalPotentialGain": 62.5,
+    "topFixes": [
+      {
+        "issueId": "test-1775672321844-ii3rp6qi5m",
+        "phase": "testCoverage",
+        "severity": "critical",
+        "code": "TEST001",
+        "message": "No test files found",
+        "estimatedImpact": 27.1,
+        "priority": 1,
+        "source": "phase"
+      },
+      {
+        "issueId": "documentation-1775672321845-5m5hja45t8s",
+        "phase": "documentQuality",
+        "severity": "critical",
+        "code": "DOC001",
+        "message": "No documentation found (missing docs/analysis/ and README.md)",
+        "estimatedImpact": 8.2,
+        "priority": 2,
+        "source": "phase"
+      },
+      {
+        "issueId": "api-1775672321845-1rnpjn9f43gi",
+        "phase": "apiCompleteness",
+        "severity": "critical",
+        "code": "API002",
+        "message": "No API endpoints found",
+        "estimatedImpact": 8.2,
+        "priority": 3,
+        "source": "phase"
+      },
+      {
+        "issueId": "requirements-1775672321844-8jkf1pv1lzr",
+        "phase": "requirementsCoverage",
+        "severity": "critical",
+        "code": "REQ001",
+        "message": "No controllers found - API endpoints not implemented",
+        "estimatedImpact": 5.3,
+        "priority": 4,
+        "source": "phase"
+      },
+      {
+        "issueId": "requirements-1775672321844-eyg1bs4y36",
+        "phase": "requirementsCoverage",
+        "severity": "critical",
+        "code": "REQ002",
+        "message": "No providers found - business logic not implemented",
+        "estimatedImpact": 5.3,
+        "priority": 5,
+        "source": "phase"
+      },
+      {
+        "issueId": "requirements-1775672321844-7varkyrn2ae",
+        "phase": "requirementsCoverage",
+        "severity": "warning",
+        "code": "REQ003",
+        "message": "No structures/DTOs found",
+        "estimatedImpact": 3.2,
+        "priority": 6,
+        "source": "phase"
+      },
+      {
+        "issueId": "requirements-1775672321844-0u41vvi7pjy9",
+        "phase": "requirementsCoverage",
+        "severity": "warning",
+        "code": "REQ004",
+        "message": "No requirements documents found in docs/analysis/",
+        "estimatedImpact": 3.2,
+        "priority": 7,
+        "source": "phase"
+      },
+      {
+        "issueId": "syntax-1775672321844-t4inyal2aig",
+        "phase": "gate",
+        "severity": "critical",
+        "code": "GATE001",
+        "message": "No TypeScript files found in src/ — pipeline may not have generated code",
+        "estimatedImpact": 2,
+        "priority": 8,
+        "source": "phase"
+      }
+    ]
+  }
+}
